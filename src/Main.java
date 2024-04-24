@@ -8,7 +8,8 @@ import java.util.Scanner;
 //1,2,3 ve ya 4 Istifadeciden iki eded daxil etmesini isteyin (ilk once birini daha sonra digerini)
 //Secimin ve ededlerin esasinda emeliyyati icra edin. Hesablamadan cixan cavabi ekranda cap edin
 //Cavabi cap edenden sonra istifadeciden davam etmek isteyib istemediyini sorusun,
-//eger davam etmek istese yeni hesablamaya baslayinProqramda olmali metodlar:
+//eger davam etmek istese yeni hesablamaya baslayin
+// Proqramda olmali metodlar:
 //add: parametrinde iki eded alib hemin ededlerin cemini qaytarmalidir
 //subtract: parametrinde iki eded alib birinci ededden ikincini cixib cavabi qaytarmalidir
 //multiply: parametrinde iki eded alib hemin ededlerin hasilini qaytarmalidir
@@ -47,13 +48,21 @@ public class Main {
                 case 4 -> System.out.println(divide(eded1, eded2));
             }
 
-            System.out.println("davam etmek isteyirsizmi:(yes - 1 / no - 2) ");
-            int choose = task.nextInt();
+            boolean check2 = true;
+            while (check2) {
 
-            if (choose == 1) {
-                check = true;
-            } else {
-                check = false;
+                System.out.println("davam etmek isteyirsizmi:(yes - 1 / no - 2) ");
+                int choose = task.nextInt();
+
+                if (choose == 1) {
+                    check = true;
+                    check2 = false;
+                } else if (choose == 2) {
+                    check = false;
+                    check2 = false;
+                } else{
+                    check2 = true;
+                }
             }
         }
     }
